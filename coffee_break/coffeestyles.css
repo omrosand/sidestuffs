@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient( circle farthest-corner at 50.3% 44.5%,  rgb(67 65 61) 0%, rgb(34 42 50) 100.2% )
+}
+@keyframes glow {
+    0% {text-shadow: 0px 0px 8px #7D4D20;}
+    50% {text-shadow: 0px 0px 13px #b87b42;}
+    100% {text-shadow: 0px 0px 8px #7D4D20;}
+}
+
+.mainTitle {
+    font-size: 5rem;
+    height: auto;
+    max-width: 245px;
+    color: #2a2724;
+    font-family: 'Bungee Shade', cursive;
+    animation-name: glow;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+.coffee {
+    padding: 0 10px;
+    text-align: end;
+    width: 245px;
+    height: auto;
+}
+.break {
+    padding: 0 10px;
+    width: 245px;
+    height: auto;
+}
+
+.mainGif {
+    max-width: 50vw;
+    height: auto;
+    max-height: 50vh;
+    border: 5px solid #dc91198a;
+    margin: 0 auto;
+}
+.mainWrapper {
+    display: flex;
+    align-items: center;
+    margin: auto auto 15px;
+}
+.artCredit {
+    color: #ffde9d;
+    text-align: end;
+    font-size: 1.3rem;
+    font-family: 'Kalam', cursive;
+    margin-bottom: 2vh;
+}
+.artCreditLink {
+    color: #f98446;
+}
+
+.fa-play-circle, .fa-pause-circle {
+    color: #c97f3b;
+    cursor: pointer;
+}
+.fa-play-circle:hover, .fa-pause-circle:hover, .volumeButton:hover {
+    color: #f0ad42c9;
+}
+#currentSong {
+    margin: 1rem auto auto;
+    text-align: center;
+    color: #ffde9d;
+    font-family: 'Roboto';
+}
+@keyframes color-change {
+    0%      {color: #b3cde2;}
+    50%     {color: #ffde9d;}
+    100%    {color: #b3cde2;}
+}
+
+.animateCurrentSong {
+    animation-name: color-change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+.source {
+   color: #83a49a;
+}
+.by {
+    font-family: 'Roboto';
+    font-style: italic;
+    text-align: end;
+    color: #858585;
+    padding-right: 1vw;
+}
+
+.controlPanel {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    padding: 0 7%;
+}
+.volumeButton {
+    display: flex;
+    background-color: #343738;
+    border: 2px solid #b16d2d;
+    border-radius: 10px;
+    color: #b36e2e;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    width: 40px;
+    padding: 1px 5px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+h5 {
+    margin-left: 3px;
+}
+.down {
+    margin-right: 10px;
+}
+.up {
+    margin-left: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    .mainWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto 0 0;
+    }
+    .mainGif {
+        width: 60vw;
+        height: auto;
+        border: 5px solid #dc91198a;
+        margin-top: 1rem;
+    }
+    .coffee, .break {
+        text-align: center;
+    }
+    h3 {
+        transform: translate(0, 0);
+        margin-bottom: 1rem;
+    }
+}

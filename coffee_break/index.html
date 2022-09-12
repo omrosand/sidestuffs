@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Kalam&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="coffeestyles.css">
+    <title>Coffee Break</title>
+</head>
+<body>
+    <div class="mainWrapper">
+        <div>
+            <h1 class="mainTitle coffee">Coffee</h1>
+            <h3> </h3>
+        </div>
+        <figure>
+            <img class="mainGif" src="images/luigisalas_coffee.gif">
+            <figcaption class="artCredit">Artwork by <a class="artCreditLink" href="https://luigimotion.myportfolio.com/" target="_blank">Luigi Salas</a></figcaption>
+        </figure>
+        <div>
+            <h1 class="mainTitle break">Break</h1>
+            <div class="by">made by <a class="artCreditLink" href="mailto:rosandolemartin@gmail.com" target="_blank">Ole M. Røsand</a></div>
+        </div>
+    </div>
+    <div id="controls" class="controlPanel">
+        <button id="volumeDown" class="volumeButton down"><i class='fas fa-volume-off'></i><h5>&minus;</h5></button>
+        <div data-video="uxR_sTZnBtg" data-autoplay="0" data-loop="1" id="youtube-audio"></div>
+        <button id="volumeUp" class="volumeButton up"><i class='fas fa-volume-off'></i><h5>&plus;</h5></button>
+    </div>
+    <h2 id="currentSong" class="currentlyPlaying"></h2>
+</body>
+<script src="script.js"></script>
+</html>

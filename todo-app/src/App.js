@@ -5,6 +5,7 @@ import Title from "./components/Title";
 function App() {
   const [todo, setTodo] = useState({ todoTitle: "", todoDesc: "" });
   const [todos, setTodos] = useState([]);
+  const [complete, setComplete] = useState(false);
 
   const handleChange = (e) => {
     const inputName = e.target.name;
@@ -17,8 +18,9 @@ function App() {
     setTodos((prev) => [...prev, todo]);
     console.log(todos);
   };
-  const completeTodo = (e) => {
-    console.log(e);
+  const completeTodo = () => {
+    setComplete(true);
+    console.log(complete);
   };
 
   return (

@@ -3,24 +3,23 @@ import "./App.scss";
 import Title from "./components/Title";
 
 function App() {
-  const [todo, setTodo] = useState({ todoTitle: "", todoDesc: "" });
   const [todos, setTodos] = useState([]);
-  const [complete, setComplete] = useState(false);
+  const [todo, setTodo] = useState({
+    todoTitle: "",
+    todoDesc: "",
+    todoPrio: "",
+  });
 
   const handleChange = (e) => {
     const inputName = e.target.name;
     const inputValue = e.target.value;
 
+    console.log(inputName, inputValue);
     setTodo((prev) => ({ ...prev, [inputName]: inputValue }));
   };
   const addTodo = (e) => {
     e.preventDefault();
     setTodos((prev) => [...prev, todo]);
-    console.log(todos);
-  };
-  const completeTodo = () => {
-    setComplete(true);
-    console.log(complete);
   };
 
   return (
@@ -44,18 +43,28 @@ function App() {
           name="todoDesc"
           onChange={handleChange}
         />
+        <label htmlFor="todoPrio">
+          <Title name="Priority: " classProp="label" />
+        </label>
+        <select id="todoPrio" name="todoPrio" onChange={handleChange}>
+          <option disabled defaultValue="Choose priority" selected>
+            Choose priority
+          </option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>High</option>
+        </select>
         <button type="submit">Add</button>
       </form>
       <section>
-        <Title name="My Todos" classProp="biggerTitle" />
+        <Title name="My Tasks" classProp="biggerTitle" />
         <ul id="todoList">
           {todos.map((task) => (
             <li key={task.todoTitle}>
+              <h3>{task.todoPrio}</h3>
               <Title name={task.todoTitle} classProp="label" />
               <p>{task.todoDesc}</p>
-              <button type="button" onClick={completeTodo}>
-                Complete
-              </button>
+              <button type="button">Complete</button>
             </li>
           ))}
         </ul>
@@ -63,5 +72,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

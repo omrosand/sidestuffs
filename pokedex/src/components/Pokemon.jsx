@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 const Pokemon = ({ pokemon }) => {
   const [types, setTypes] = useState([]);
   const [img, setImg] = useState("");
-  const [shiny, setShiny] = useState(false);
 
   // Setter første bokstav til stor bokstav
   const firstLetterUpperCase = (word) => {

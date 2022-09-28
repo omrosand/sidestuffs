@@ -17,13 +17,7 @@ const Pokemon = ({ pokemon }) => {
     const response = await fetch(url);
     const data = await response.json();
 
-    if (shiny) {
-      setImg(data.sprites.front_shiny);
-      setShiny(false);
-    } else {
-      setImg(data.sprites.front_default);
-      setShiny(true);
-    }
+    setImg(data.sprites.front_default);
   };
 
   const getPokemonTypes = async (url) => {
@@ -39,12 +33,7 @@ const Pokemon = ({ pokemon }) => {
   return (
     <li className="pokemon">
       <h2>{firstLetterUpperCase(pokemon.name)}</h2>
-      <img
-        src={img}
-        alt="pokemon"
-        onMouseEnter={() => setShiny(true)}
-        onMouseLeave={() => setShiny(false)}
-      />
+      <img src={img} alt="pokemon" />
       <p>
         <a href={pokemon.url} target="_blank" rel="noreferrer">
           More about {firstLetterUpperCase(pokemon.name)}

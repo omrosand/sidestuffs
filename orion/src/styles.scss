@@ -1,0 +1,146 @@
+#root {
+  //   max-width: 1280px;
+  margin: 0 auto;
+  //   padding: 2rem;
+  text-align: center;
+}
+.mainNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 0.3em 1em;
+  .logo {
+    background-image: url("./assets/9g4bk.webp");
+    position: absolute;
+    width: 200px;
+    height: 25.6px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-right: 20px;
+  }
+  ul {
+    font-weight: 300;
+    font-size: 18px;
+    display: flex;
+    gap: 1em;
+    list-style: none;
+    margin-left: auto;
+    margin-right: 2em;
+    a {
+      color: #414042;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .searchIcon {
+    font-size: 26px;
+    margin-right: 1.5em;
+    color: #414042;
+    cursor: pointer;
+  }
+}
+.roadmapWrapper {
+  position: relative;
+  height: 600px;
+}
+.roadmap {
+  background-image: url("./assets/veikart.png");
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  section {
+    height: fit-content;
+    max-width: 1300px;
+    margin: 100px auto 0;
+    h1 {
+      position: absolute;
+      margin: 0 0 0 0.5em;
+      text-align: left;
+      max-width: 300px;
+      font-size: 2.5em;
+      line-height: 1.32em;
+      color: white;
+      font-weight: 600;
+    }
+  }
+}
+.positionsDivider {
+  background-color: #4c5180;
+  display: flex;
+  padding: 2.5em 3em;
+  font-size: 1.2rem;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300;
+  text-align: left;
+  section {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1em;
+    p {
+      margin: 0;
+      max-width: 900px;
+    }
+    button {
+      background-color: #4c5180;
+      border: 1px solid white;
+      font-size: 1.2rem;
+      font-family: "Barlow", sans-serif;
+      padding: 1em 1.2em;
+      max-width: 400px;
+      margin-right: 4em;
+      &:hover {
+        cursor: pointer;
+        background-color: #363636;
+        transition: background-color 0.5s ease;
+      }
+    }
+  }
+}
+.cardSection {
+  background-color: #676ca8;
+  section {
+    display: flex;
+    gap: 1.5em;
+    max-width: 1300px;
+    margin: 0 auto;
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      margin: 30px auto 200px;
+      padding: 1em 0.5em;
+      width: 350px;
+      h2 {
+        margin: 0;
+        font-weight: 500;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 300;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      &:nth-child(1) {
+        border: 3px solid rgba(121, 245, 136, 0.8);
+      }
+
+      &:nth-child(2) {
+        border: 3px solid rgb(255, 209, 70, 0.8);
+      }
+
+      &:nth-child(3) {
+        border: 3px solid rgb(248, 137, 99, 0.8);
+      }
+    }
+  }
+}

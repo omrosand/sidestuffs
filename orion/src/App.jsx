@@ -12,6 +12,7 @@ function App() {
       <Roadmap />
       <PositionsDivider />
       <CardSection />
+      <p>Example ends here...</p>
     </Router>
   );
 }

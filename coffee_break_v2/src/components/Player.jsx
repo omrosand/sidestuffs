@@ -1,4 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { TbPlayerPlayFilled } from "react-icons/tb";
+import { TbPlayerPauseFilled } from "react-icons/tb";
+import { TbPlayerSkipForwardFilled } from "react-icons/tb";
+import { TbMusic } from "react-icons/tb";
+import { TbMusicOff } from "react-icons/tb";
 
 const Player = () => {
   const streams = useMemo(
@@ -89,6 +94,7 @@ const Player = () => {
     }
   };
   const handleNext = () => {
+    setPlay(true);
     const currentIndex = streams.findIndex(
       (stream) => stream === currentStream
     );
@@ -100,6 +106,7 @@ const Player = () => {
       playerRef.current.playVideo();
       const videoTitle = streams[nextIndex].name;
       setTitle(videoTitle);
+      console.log(playerRef);
     }
   };
 
@@ -107,17 +114,29 @@ const Player = () => {
     <section className="player">
       <div>
         <div id="youtube-player"></div>
-        <button onClick={handlePlay}>{play ? "Pause" : "Play"}</button>
+        <button className="controllerBtn" onClick={handlePlay}>
+          {play ? <TbPlayerPauseFilled /> : <TbPlayerPlayFilled />}
+        </button>
         <input
           type="range"
           min="0"
-          max="100"
+          max="80"
           defaultValue="10"
           onChange={(e) => handleVolumeChange(e.target.value)}
         />
+        <button className="controllerBtn" onClick={handleNext}>
+          <TbPlayerSkipForwardFilled />
+        </button>
       </div>
-      <p>{title}</p>
-      <button onClick={handleNext}>Next station</button>
+      {!play ? (
+        <p>
+          <TbMusicOff /> Paused
+        </p>
+      ) : (
+        <p>
+          <TbMusic /> Listening to {title}
+        </p>
+      )}
     </section>
   );
 };

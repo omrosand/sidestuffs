@@ -1,10 +1,14 @@
 import "./App.scss";
+import logo from "./img/hot-drink.png";
 import Player from "./components/Player";
 
 function App() {
   return (
     <main>
-      <h1>coffe break v2</h1>
+      <header>
+        <h1>Coffee Break v2</h1>
+        <img src={logo} alt="off" />
+      </header>
       <Player />
     </main>
   );

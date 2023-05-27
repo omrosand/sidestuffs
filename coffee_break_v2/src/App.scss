@@ -173,3 +173,54 @@ h1 {
     color: $second;
   }
 }
+@media only screen and (max-width: 700px) {
+  #root {
+    padding: 0;
+  }
+  header {
+    max-width: 340px;
+    height: auto;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    h1 {
+      font-size: 3rem;
+    }
+    img {
+      margin: 0 auto;
+    }
+  }
+  main {
+    border-radius: 0;
+    box-shadow: none;
+    width: auto;
+    padding: 1em;
+    margin: 0;
+  }
+  .player {
+    max-width: 340px;
+    width: auto;
+    padding: 1em;
+  }
+  .controllerBtn {
+    font-size: 2rem;
+    padding: 10px;
+    height: fit-content;
+    margin: auto;
+  }
+  .weather {
+    flex-direction: column;
+    gap: 1em;
+    max-width: 340px;
+    width: auto;
+    margin: 0 auto;
+    .weatherCard {
+      padding: 1em 3em;
+    }
+    .mainInfo {
+      justify-content: space-between;
+      div {
+        flex-direction: row;
+      }
+    }
+  }
+}

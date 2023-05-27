@@ -115,28 +115,36 @@ const Player = () => {
       <div>
         <div id="youtube-player"></div>
         <button className="controllerBtn" onClick={handlePlay}>
-          {play ? <TbPlayerPauseFilled /> : <TbPlayerPlayFilled />}
+          {play ? (
+            <TbPlayerPauseFilled className="icon" />
+          ) : (
+            <TbPlayerPlayFilled className="icon" />
+          )}
         </button>
-        <input
-          type="range"
-          min="0"
-          max="80"
-          defaultValue="10"
-          onChange={(e) => handleVolumeChange(e.target.value)}
-        />
+        <div className="wrapper">
+          {!play ? (
+            <p>
+              <TbMusicOff /> Satt på pause
+            </p>
+          ) : (
+            <p>
+              <TbMusic /> Hører på {title}
+            </p>
+          )}
+          <input
+            type="range"
+            min="0"
+            max="50"
+            defaultValue="10"
+            onChange={(e) => handleVolumeChange(e.target.value)}
+          />
+        </div>
+
         <button className="controllerBtn" onClick={handleNext}>
-          <TbPlayerSkipForwardFilled />
+          <TbPlayerSkipForwardFilled className="icon" />
         </button>
+        <div></div>
       </div>
-      {!play ? (
-        <p>
-          <TbMusicOff /> Paused
-        </p>
-      ) : (
-        <p>
-          <TbMusic /> Listening to {title}
-        </p>
-      )}
     </section>
   );
 };

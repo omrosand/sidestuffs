@@ -22,6 +22,7 @@ $font-reg: "Karma", serif;
 }
 main {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   gap: 1em;
@@ -173,6 +174,18 @@ h1 {
     color: $second;
   }
 }
+.madeBy {
+  position: absolute;
+  background-color: #2a3232a5;
+  text-shadow: 0px 0px 4px black;
+  padding: 0.2em;
+  border-radius: 10px;
+  bottom: -60px;
+  right: 50px;
+  a {
+    color: rgb(255, 133, 58);
+  }
+}
 @media only screen and (max-width: 700px) {
   #root {
     padding: 0;
@@ -222,5 +235,9 @@ h1 {
         flex-direction: row;
       }
     }
+  }
+  .madeBy {
+    bottom: -60px;
+    right: 100px;
   }
 }
